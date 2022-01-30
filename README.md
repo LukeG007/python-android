@@ -14,34 +14,3 @@ adb shell chmod 755 /data/python-android/setup.sh
 adb shell "su -c '/data/python-android/setup.sh'"
 ```
 
-## Examples
-### Unlock Device
-```python
-from android import Android
-
-def unlock():
-    droid.keyevent('HOME')
-    droid.swipe(700, 2400, 700, 320, 500)
-    droid.text_input('password')
-    droid.keyevent(66)
-
-droid = Android()
-
-unlock()
-```
-### Take a screenshot
-```python
-from android import Android
-
-droid = Android()
-
-droid.screenshot('/storage/emulated/0/Pictures')
-```
-### Reboot
-```python
-from android import Android
-
-droid = Android()
-
-droid.reboot()
-```
